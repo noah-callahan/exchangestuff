@@ -2,6 +2,8 @@ New-MailboxExportRequest -Mailbox TEST\Administrator -IncludeFolders "#SentItems
 
 Get-MailboxExportRequest
 
-Get-Mailbox CIP/administrator | ft DisabledArchiveGuid,DisabledArchiveDatabase
+Get-Mailbox TEST\administrator | ft DisabledArchiveGuid,DisabledArchiveDatabase
+
+Connect-mailbox -id 51aa5e56-88d3-4bb9-a2ac-8362890fa08d -database 1609946972 -User TEST\Admin -Archive
 
 Get-MailboxFolderStatistics -Identity TEST\Admin | out-file -FilePath C:\foldersizes.txt
