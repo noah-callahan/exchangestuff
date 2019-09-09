@@ -1,0 +1,7 @@
+New-MailboxExportRequest -Mailbox TEST\Administrator -IncludeFolders "#SentItems#" -FilePath C:\archives\administrator\sent.pst
+
+Get-MailboxExportRequest
+
+Get-Mailbox CIP/administrator | ft DisabledArchiveGuid,DisabledArchiveDatabase
+
+Get-MailboxFolderStatistics -Identity TEST\Admin | out-file -FilePath C:\foldersizes.txt
